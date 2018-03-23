@@ -1,18 +1,26 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>Django 바닐라 blog</title>
     </head>
     <body>
         <div>
-            <h1><a href="">Django Girls Blog</a></h1>
+            <h1><a href="">Django 바닐라 Blog</a></h1>
         </div>
         
+        <table border = "1">
+            <tr>
+                <td>작성일시</td>
+                <td>제목</td>
+            </tr>
         {% for post in posts %}
-            <div>
-                <p>published : {{ post.published_date }}</p>
-                <h1><a href="">{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
-            </div>
+            <tr>
+                <td>{{ post.created_date }}</td>
+                <td><a href="">{{ post.title }}</a></td>
+                <!--<p>{{ post.text|linebreaksbr }}</p> -->
+            </tr>
         {% endfor %}
     </body>
 </html>
